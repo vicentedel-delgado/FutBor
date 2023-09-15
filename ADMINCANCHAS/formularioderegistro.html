@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Formulario de Reservas</title>
+    
+    <!-- DE AQUI PARA ABAJO CSS-->
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        padding: 20px;
+      }
+
+      form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      input[type="text"],
+      input[type="tel"],
+      input[type="email"],
+      input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      input[type="file"] {
+        margin-top: 5px;
+      }
+
+      input[type="checkbox"] {
+        margin-right: 5px;
+      }
+
+      button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+      button {
+  display: block;
+  margin: 0 auto;
+}
+
+    </style>
+  </head>
+  <body>
+    <form>
+
+      <h1 style="text-align: center; font-size: 150%; color: #2c5e43;">PARA REGISTRAR UNA CANCHA SINTETICA EN FUTBOR, LLENAR EL FORMULARIO</h1>
+
+      <label for="nombrePropietario">Nombre del Propietario:</label>
+      <input type="text" id="nombrePropietario" name="nombrePropietario" required>
+      <br><br>
+      
+      <label for="telefono">Telf: de WhatsApp para Recepcionar Reservas:</label>
+      <input type="tel" id="telefono" name="telefono" required>
+      <br><br>
+      
+      <label for="correo">Correo Gmail:</label>
+      <input type="email" id="correo" name="correo" required>
+      <br><br>
+      
+      <label for="nombreCancha">Nombre de Cancha Sintetica:</label>
+      <input type="text" id="nombreCancha" name="nombreCancha" required>
+      <br><br>
+      
+      <label for="numCanchas">Numero de Canchas Disponibles:</label>
+      <input type="number" id="numCanchas" name="numCanchas" required>
+      <br><br>
+
+      <label for="direccion">Direccion exacta de la cancha sintetica:</label>
+      <input type="text" id="direccion" name="direccion" required>
+      <br><br>
+      
+      
+      <label for="horario">Horario de Atencion:</label>
+      <input type="text" id="horario" name="horario" required>
+      <br><br>
+      
+      <label for="tarifaDiario">Tarifa Diario x Hora:</label>
+      <input type="text" id="tarifaDiario" name="tarifaDiario" required>
+      <br><br>
+      
+      <label for="tarifaNoche">Tarifa Noche x Hora:</label>
+      <input type="text" id="tarifaNoche" name="tarifaNoche" required>
+      <br><br>
+
+      <label for="foto">Foto:</label>
+      <input type="file" id="foto">
+      <br><br>
+
+      
+      <label for="terminosCondiciones">Estoy de acuerdo con los términos y condiciones de esta página</label>
+      <input type="checkbox" id="terminosCondiciones" name="terminosCondiciones" required>
+      <br><br>
+
+      <button type="button" onclick="enviarWhatsApp()">Enviar</button>
+    </form>
+
+    <script>
+      function enviarWhatsApp() {
+        var nombrePropietario = document.getElementById("nombrePropietario").value;
+        var telefono = document.getElementById("telefono").value;
+        var correo = document.getElementById("correo").value;
+        var nombreCancha = document.getElementById("nombreCancha").value;
+        var numCanchas = document.getElementById("numCanchas").value;
+        var direccion = document.getElementById("direccion").value;
+        var horario = document.getElementById("horario").value;
+        var tarifaDiario = document.getElementById("tarifaDiario").value;
+        var tarifaNoche = document.getElementById("tarifaNoche").value;
+        var foto = document.getElementById("foto").value;
+        var terminosCondiciones = document.getElementById("terminosCondiciones").checked;
+
+        if (nombrePropietario === "" || telefono === "" || correo === "" || nombreCancha === "" || numCanchas === "" || horario === "" || tarifaDiario === "" || tarifaNoche === "" || !terminosCondiciones) {
+          alert("Por favor, complete todos los campos del formulario y acepte los términos y condiciones de FutBor.");
+        } else {
+          // Construir el mensaje con los datos ingresados
+          var mensaje = "🙋‍♂️¡Hola! deseo registrar mi Cancha en FutBor⚽\n\n";
+          mensaje += "Nombre del Propietario: " + nombrePropietario + "\n";
+          mensaje += "Telf: de WhatsApp: " + telefono + "\n";
+          mensaje += "Correo Gmail: " + correo + "\n";
+          mensaje += "Nombre de Cancha Sintetica: " + nombreCancha + "\n";
+          mensaje += "Numero de Canchas Disponibles: " + numCanchas + "\n";
+          mensaje += "Direccion: " + direccion + "\n";
+          mensaje += "Horario de Atencion: " + horario + "\n";
+          mensaje += "Tarifa Diario x Hora: " + tarifaDiario + "\n";
+          mensaje += "Tarifa Noche x Hora: " + tarifaNoche;
+
+          // Reemplazar los espacios en blanco por %20 para la URL de WhatsApp
+          mensaje = encodeURIComponent(mensaje);
+
+          // Generar la URL de WhatsApp con el número y el mensaje
+          var urlWhatsApp = "https://wa.me/51940643215?text=" + mensaje;
+
+          // Abrir la URL de WhatsApp en una nueva pestaña
+          window.open(urlWhatsApp);
+        }
+      }
+    </script>
+  </body>
+</html>

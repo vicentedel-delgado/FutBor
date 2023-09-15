@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- api google maps -->
+  <title>Google Maps con Geolocalización y Marcadores</title>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwn3W-Wi-OwjY_9SUpg7fmfm5H8lUlIrg"></script>
+  <style>
+    #map {
+      height: 600px;
+      width: 100%;
+    }
+  </style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6X6VPDJW87"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6X6VPDJW87');
+</script>
+
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+
+  form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  input[type="file"] {
+    margin-top: 5px;
+  }
+
+  input[type="checkbox"] {
+    margin-right: 5px;
+  }
+
+  button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+</style>
+
+</head>
+<body>
+  <div id="map"></div>
+
+  <script>
+    function initMap() {
+      const lima = { lat: -12.046374, lng: -77.042793 }; // Coordenadas de Lima, Perú
+
+      const map = new google.maps.Map(document.getElementById('map'), {
+        center: lima,
+        zoom: 10,
+      });
+
+      const markers = [
+        { position: { lat: -12.1977943564536, lng: -76.96816563606264 }, title: 'La Delis', url: 'https://vicentedel-delgado.github.io/SportLobo.io/Admin%20Canchas/la%20bombonera/canchadelia-ves.html' },
+        { position: { lat: -12.075925, lng: -77.029594 }, title: 'Cancha2', url: 'https://www.shuzzos.com' },
+        { position: { lat: -12.063921, lng: -77.036578 }, title: 'Cancha3', url: 'https://www.tiendasel.com/zapatos' },
+        { position: { lat: -12.070785, lng: -77.049512 }, title: 'Cancha4', url: 'https://calzaml.com/' },
+        { position: { lat: -12.062246, lng: -77.059343 }, title: 'Cancha5', url: 'https://www.velez.pe/' },
+        // ... los otros marcadores
+      ];
+
+      const ballIcon = {
+        url: 'https://i.ibb.co/z7zBm4C/4-removebg-preview.png',
+        scaledSize: new google.maps.Size(40, 40),
+      };
+
+      markers.forEach(markerInfo => {
+        const marker = new google.maps.Marker({
+          position: markerInfo.position,
+          map: map,
+          title: markerInfo.title,
+          icon: ballIcon,
+          label: {
+            text: markerInfo.title,
+            color: 'red',
+          },
+        });
+
+        marker.addListener('click', () => {
+          window.location.href = markerInfo.url;
+        });
+      });
+
+      // Obtener la ubicación actual del usuario
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var userPos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+
+          new google.maps.Marker({
+            position: userPos,
+            map: map,
+            title: 'Tu ubicación',
+            icon: {
+              url: 'https://i.ibb.co/M2cX6VV/Jugador.png', // Cambiar a la URL de la imagen correcta
+              scaledSize: new google.maps.Size(50, 50)
+            }
+          });
+
+          map.setCenter(userPos);
+          map.setZoom(15); // Ajustar el zoom para centrarse en la ubicación del usuario
+        });
+      }
+    }
+    window.onload = initMap;
+  </script>
+</body>
+</html>
