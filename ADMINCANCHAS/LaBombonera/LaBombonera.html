@@ -97,71 +97,134 @@
 
 
 
+  <h1>LLENA EL FORMULARIO PARA RESERVAR</h1>
+  <form id="formulario" onsubmit="return enviarFormulario()">
+    <label for="cancha">Cancha:</label> <br>
+    <select id="cancha" name="cancha" required>
+        <option value="">Seleccione una opción</option>
+        <option value="Cancha N° 1 (Fubol 6)">Cancha N° 1 (Fubol 6)</option>
+        <option value="Cancha N° 2 (Fubol 6)">Cancha N° 2 (Fubol 6)</option>
+        <option value="Cancha N° 3 (Fubol 9)">Cancha N° 3 (Fubol 9) </option>
+        <!-- Agregar más opciones de cancha aquí -->
+    </select><br>
 
-    <h1>LLENA EL FORMULARIO PARA RESERVAR</h1>
-    <form id="formulario" onsubmit="return enviarFormulario()">
-        <label for="cancha">Cancha:</label> <br>
-        <select id="cancha" name="cancha" required>
-            <option value="">Seleccione una opción</option>
-            <option value="Cancha N° 1">Cancha N° 1</option>
-            <option value="Cancha N° 2">Cancha N° 2</option>
-            <option value="Cancha N° 3">Cancha N° 3</option>
-            <!-- Agregar más opciones de cancha aquí -->
-        </select><br>
+    <label for="fecha">Fecha:</label> <br>
+    <input type="date" id="fecha" name="fecha" required><br>
 
-        <label for="nombre">Nombre completo:</label> <br>
-        <input type="text" id="nombre" name="nombre" required><br>
+    <label for="hora_inicio">Hora de Inicio:</label> <br>
+    <select id="hora_inicio" name="hora_inicio" required>
+        <option value="">Seleccione una opción</option>
+        <option value="06:00 a.m.">06:00 a.m. </option>
+        <option value="06:30 a.m.">06:30 a.m.</option>
+        <option value="07:00 a.m. ">07:00 a.m.</option>
+        <option value="07:00 a.m. ">07:00 a.m.</option>
+        <option value="07:30 a.m. ">07:30 a.m.</option>
+        <option value="08:00 a.m. ">08:00 a.m.</option>
+        <option value="08:30 a.m. ">08:30 a.m.</option>
+        <option value="09:00 a.m. ">09:00 a.m.</option>
+        <option value="09:30 a.m. ">09:30 a.m.</option>
+        <option value="10:00 a.m. ">10:00 a.m.</option>
+        <option value="10:30 a.m. ">10:30 a.m.</option>
+        <option value="11:00 a.m. ">11:00 a.m.</option>
+        <option value="11:30 a.m. ">11:30 a.m.</option>
+        <option value="12:00 p.m.. ">12:00 p.m.</option>
+        <option value="12:30 p.m.. ">12:30 p.m.</option>
+        <option value="01:00 p.m.. ">01:00 p.m.</option>
+        <option value="01:30 p.m.. ">01:30 p.m.</option>
+        <option value="02:00 p.m.. ">02:00 p.m.</option>
+        <option value="02:30 p.m.. ">02:30 p.m.</option>
+        <option value="03:00 p.m.. ">03:00 p.m.</option>
+        <option value="03:30 p.m.. ">03:30 p.m.</option>
+        <option value="04:00 p.m.. ">04:00 p.m.</option>
+        <option value="04:30 p.m.. ">04:30 p.m.</option>
+        <option value="05:00 p.m.. ">05:00 p.m.</option>
+        <option value="05:30 p.m.. ">05:30 p.m.</option>
+        <option value="06:00 p.m.. ">06:00 p.m.</option>
+        <option value="06:30 p.m.. ">06:30 p.m.</option>
+        <option value="07:00 p.m.. ">07:00 p.m.</option>
+        <option value="07:30 p.m.. ">07:30 p.m.</option>
+        <option value="08:00 p.m.. ">08:00 p.m.</option>
+        <option value="08:30 p.m.. ">08:30 p.m.</option>
+        <option value="09:00 p.m.. ">09:00 p.m.</option>
+        <option value="09:30 p.m.. ">09:30 p.m.</option>
+        <option value="10:00 p.m.. ">10:00 p.m.</option>
+        <option value="10:30 p.m.. ">10:30 p.m.</option>
+        <option value="11:00 p.m.. ">11:00 p.m.</option>
 
-        <label for="hora">Confirmar Hora:</label> <br>
-        <select id="hora" name="hora" required>
-            <option value="">Seleccione una opción</option>
-            <option value="06:00 a 07:00">06:00 a 07:00</option>
-            <option value="07:00 a 08:00">07:00 a 08:00</option>
-            <option value="08:00 a 09:00">08:00 a 09:00</option>
-            <option value="09:00 a 10:00">09:00 a 10:00</option>
-            <option value="10:00 a 11:00">10:00 a 11:00</option>
-            <option value="11:00 a 12:00">11:00 a 12:00</option>
-            <option value="12:00 a 13:00">12:00 a 13:00</option>
-            <option value="13:00 a 14:00">13:00 a 14:00</option>
-            <option value="14:00 a 15:00">14:00 a 15:00</option>
-            <option value="15:00 a 16:00">15:00 a 16:00</option>
-            <option value="16:00 a 17:00">16:00 a 17:00</option>
-            <option value="17:00 a 18:00">17:00 a 18:00</option>
-            <option value="18:00 a 19:00">18:00 a 19:00</option>
-            <option value="19:00 a 20:00">19:00 a 20:00</option>
-            <option value="20:00 a 21:00">20:00 a 21:00</option>
-            <option value="21:00 a 22:00">21:00 a 22:00</option>
-            <option value="22:00 a 23:00">22:00 a 23:00</option>
-            <option value="23:00 a 00:00">23:00 a 00:00</option>
-            <!-- Agregar más opciones de hora aquí -->
-        </select><br>
+        <!-- Agregar más opciones de hora de inicio aquí -->
+    </select><br>
 
-        <label for="fecha">Fecha:</label> <br>
-        <input type="date" id="fecha" name="fecha" required><br>
+    <label for="hora_fin">Hora de Fin:</label> <br>
+    <select id="hora_fin" name="hora_fin" required>
+        <option value="">Seleccione una opción</option>
+        <option value="07:00 a.m. ">07:00 a.m.</option>
+        <option value="07:30 a.m. ">07:30 a.m.</option>
+        <option value="08:00 a.m. ">08:00 a.m.</option>
+        <option value="08:30 a.m. ">08:30 a.m.</option>
+        <option value="09:00 a.m. ">09:00 a.m.</option>
+        <option value="09:30 a.m. ">09:30 a.m.</option>
+        <option value="10:00 a.m. ">10:00 a.m.</option>
+        <option value="10:30 a.m. ">10:30 a.m.</option>
+        <option value="11:00 a.m. ">11:00 a.m.</option>
+        <option value="11:30 a.m. ">11:30 a.m.</option>
+        <option value="12:00 p.m.. ">12:00 p.m.</option>
+        <option value="12:30 p.m.. ">12:30 p.m.</option>
+        <option value="01:00 p.m.. ">01:00 p.m.</option>
+        <option value="01:30 p.m.. ">01:30 p.m.</option>
+        <option value="02:00 p.m.. ">02:00 p.m.</option>
+        <option value="02:30 p.m.. ">02:30 p.m.</option>
+        <option value="03:00 p.m.. ">03:00 p.m.</option>
+        <option value="03:30 p.m.. ">03:30 p.m.</option>
+        <option value="04:00 p.m.. ">04:00 p.m.</option>
+        <option value="04:30 p.m.. ">04:30 p.m.</option>
+        <option value="05:00 p.m.. ">05:00 p.m.</option>
+        <option value="05:30 p.m.. ">05:30 p.m.</option>
+        <option value="06:00 p.m.. ">06:00 p.m.</option>
+        <option value="06:30 p.m.. ">06:30 p.m.</option>
+        <option value="07:00 p.m.. ">07:00 p.m.</option>
+        <option value="07:30 p.m.. ">07:30 p.m.</option>
+        <option value="08:00 p.m.. ">08:00 p.m.</option>
+        <option value="08:30 p.m.. ">08:30 p.m.</option>
+        <option value="09:00 p.m.. ">09:00 p.m.</option>
+        <option value="09:30 p.m.. ">09:30 p.m.</option>
+        <option value="10:00 p.m.. ">10:00 p.m.</option>
+        <option value="10:30 p.m.. ">10:30 p.m.</option>
+        <option value="11:00 p.m.. ">11:00 p.m.</option>
+        <option value="11:30 p.m.. ">11:30 p.m.</option>
+        <option value="12:00 a.m. ">12:00 a.m.</option>
+        <!-- Agregar más opciones de hora de fin aquí -->
+    </select><br>
 
-        <label for="archivo">Archivo:</label> <br>
-        <input type="file" id="archivo" name="archivo"><br>
+    <label for="nombre">Nombre completo:</label> <br>
+    <input type="text" id="nombre" name="nombre" required><br>
 
-        <div id="fecha-actual"></div> <!-- Aquí se mostrará la fecha actual -->
+    <label for="mensaje">Mensaje:</label> <br>
+    <textarea id="mensaje" name="mensaje"></textarea><br>
 
-        <label for="mensaje">Mensaje:</label> <br>
-        <textarea id="mensaje" name="mensaje"></textarea><br>
+    <label>ACEPTO: Hacer la reserva con 20%  por YAPE o PLIN al numero 952878491 a nombre de Vicente Delgado y enviar el comprobante por WhatsApp:</label><br>
+    <input type="checkbox" id="aceptar_reserva" required><br>
 
-        <button type="submit"
-            onclick="
-                var numero = '51948494984';
-                var mensaje = '¡Hola, Estoy Reservando La Cancha como indica abajo !%0A%0A' +
-                    'Cancha Reservada: ' + document.getElementById('cancha').value + '%0A' +
-                    'Nombre: ' + document.getElementById('nombre').value + '%0A' +
-                    'Hora: ' + document.getElementById('hora').value + '%0A' +
-                    'Fecha: ' + document.getElementById('fecha').value + '%0A' +
-                    'Archivo: ' + document.getElementById('archivo').value + '%0A' +
-                    'Mensaje: ' + document.getElementById('mensaje').value;
-                window.open('https://api.whatsapp.com/send?phone=' + numero + '&text=' + mensaje);
-                return false;
-            "
-        >Reservar</button>
-    </form>
+    <div id="fecha-actual"></div>
+
+    <button type="submit">Reservar</button>
+  </form>
+
+  <script>
+    document.getElementById('formulario').addEventListener('submit', function(e) {
+        e.preventDefault(); // Previene el envío por defecto del formulario
+
+        var numero = '51940643215';
+        var mensaje = '⚽¡HOLA, Estoy Reservando La Cancha como indica abajo !%0A%0A' +
+            'CANCHA RESERVADA: ' + document.getElementById('cancha').value + '%0A' +
+            'FECHA: ' + document.getElementById('fecha').value + '%0A' +
+            'HORA DE INICIO: ' + document.getElementById('hora_inicio').value + '%0A' +
+            'HORA DE FIN: ' + document.getElementById('hora_fin').value + '%0A' +
+            'NOMBRE: ' + document.getElementById('nombre').value + '%0A' +
+            'MENSAJE: ' + document.getElementById('mensaje').value;
+
+        window.open('https://api.whatsapp.com/send?phone=' + numero + '&text=' + mensaje);
+    });
+  </script>
 </body>
 </html>
 
