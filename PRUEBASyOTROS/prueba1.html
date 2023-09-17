@@ -88,19 +88,19 @@
   caption {
     font-weight: bold; /* Poner el título en negrita */
     text-align: center; /* Centrar el título */
-    font-size: 1.5em; /* Ajustar el tamaño de la fuente del título */
+    font-size: 1.0em; /* Ajustar el tamaño de la fuente del título */
     margin-bottom: 10px; /* Agregar un espacio después del título */
   }
   th {
     background-color: #4CAF50; /* Cambiar el color de fondo de las celdas de encabezado */
     color: white; /* Cambiar el color del texto de las celdas de encabezado */
-    font-size: 1.2em; /* Ajustar el tamaño de la fuente del texto de las celdas de encabezado */
+    font-size: 1.0em; /* Ajustar el tamaño de la fuente del texto de las celdas de encabezado */
   }
   td {
     border: 1px solid #ddd; /* Agregar bordes a las celdas */
     padding: 8px; /* Añadir un espacio entre el texto y el borde de las celdas */
     text-align: center; /* Centrar el texto en las celdas */
-    font-size: 1.1em; /* Ajustar el tamaño de la fuente del texto en las celdas */
+    font-size: 0.7em; /* Ajustar el tamaño de la fuente del texto en las celdas */
   }
   tr:nth-child(even) {
     background-color: #f2f2f2; /* Cambiar el color de fondo de las filas pares */
@@ -138,18 +138,44 @@
           <td>S/80</td>
           <td>S/100</td>
         </tr>
-        
-      </table>
+              </table>
       
-      
+             <!-- de aqui pa abajo LA TALBA DE OTROS-->  
+             <table>
+              <caption>OTROS DATOS</caption>
+              <tr>
+                <th>#####</th>
+                <th>####</th>
+             
+              </tr>
+              <tr>
+                <td>HORARIO DE ATENCION</td>
+                <td>Lunes a Sabado: 7:00 A.m. - 10:00 P.m.</td>
+
+              </tr>
+              <tr>
+                <td></td>
+                <td>Domingos: 7:00 A.m. - 3:00 P.m.</td>
+                </tr>
+
+              <tr>
+                <td>RESERVA ACEPTADA</td>
+                <td>Con 20% o Cancelacion Total</td>
+                 </tr>
+
+                 <tr>
+                  <td>DIRECCION</td>
+                  <td>Av. 1ero. de Mayo 1940</td>
+                   </tr>
+
+                   
+                 <tr>
+                  <td>OFERTAS</td>
+                  <td>Muy Pronto</td>
+                   </tr>
+                    </table> <br>
 
 
-  <div class="info">
-    <p><strong>HORARIO DE ATENCIÓN:</strong> 7:00 am. a 22:00 Pm.</p>
-    <p><strong>RESERVA ACEPTADA:</strong> Con 20%</p>
-    <p><strong>DIRECCIÓN:</strong> Av. 1ero de mayo 1950</p>
-  </div>
-  
       <!-- de aqui pa abajo CALENDARIO-->
   <div style="display: flex; justify-content: center;">
     <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%230B8043&ctz=America%2FLima&showCalendars=0&showTabs=0&showPrint=0&title=La%20Bombonera%20-%20Cancha%20N%C2%B01%20(6%20Jugadores)&mode=WEEK&src=Mjc1OGUyMzRmNjNlZWRmMGE1NmNlZDEyOGY4MWJhZGVlMGFkMzkyNWNiMmJjNzI0ZmYzYmU4ZmY0MjVjN2I2OEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%230B8043" style="border:solid 1px #777" width="380" height="600" frameborder="0" scrolling="no"></iframe>
@@ -163,8 +189,8 @@
     <select id="cancha" name="cancha" required>
         <option value="">Seleccione una opción</option>
         <option value="Cancha N° 1 (6 Jugadores)">Cancha N° 1 (6 Jugadores)</option>
-        <option value="Cancha N° 2 (9 Jugadores)">Cancha N° 2 (9 Jugadores)</option>
-        <option value="Cancha N° 3 (11 jugadores)">Cancha N° 3 (11 Jugadores) </option>
+        <option value="Cancha N° 2 (6 Jugadores)">Cancha N° 2 (6 Jugadores)</option>
+        <option value="Cancha N° 3 (9 jugadores)">Cancha N° 3 (9 Jugadores) </option>
         <!-- Agregar más opciones de cancha aquí -->
     </select><br>
 
@@ -274,7 +300,7 @@
         e.preventDefault(); // Previene el envío por defecto del formulario
 
         var numero = '51940643215';
-        var mensaje = '⚽¡HOLA, Estoy Reservando La Cancha como indica abajo !%0A%0A' +
+        var mensaje = '⚽¡HOLA, Estoy Reservando La Cancha como indica abajo,  también le hago el adelanto del 20% o cancelacion total por YAPE/PLIN al N° 952878491 a Nombre de Vicente Delgado, para asegurar la cancha y también le envió el comprobante de pago.   !%0A%0A' +
             'CANCHA RESERVADA: ' + document.getElementById('cancha').value + '%0A' +
             'FECHA: ' + document.getElementById('fecha').value + '%0A' +
             'HORA DE INICIO: ' + document.getElementById('hora_inicio').value + '%0A' +
