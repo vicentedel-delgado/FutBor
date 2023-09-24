@@ -116,13 +116,50 @@
   </div><br>
 
        <!-- de aqui pa abajo BOTON Buscar un rival-->  
-       <button onclick="window.location.href='https://chat.whatsapp.com/LdDy9zdsBYzIKtuUqQsJIq';">Buscar Un Equipo de Futbol Rival</button>
-
-       <a href="https://chat.whatsapp.com/LdDy9zdsBYzIKtuUqQsJIq" target="_blank" onclick="window.open('https://chat.whatsapp.com/LdDy9zdsBYzIKtuUqQsJIq','newwindow','width=200,height=200'); return false;">
-        <div style="position: fixed; bottom: 10px; right: 10px; background-color: #f44336; color: white; padding: 10px; border-radius: 5px; cursor: pointer;">
-          <h3>Buscar un Equipo de Futbol Rival </h3>
+       <style>
+        .popup {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: #f44336;
+          color: white;
+          padding: 10px;
+          border-radius: 5px;
+          z-index: 9999;
+          font-size: 12px;
+          text-align: center;
+          animation: changeColor 2s ease-in-out infinite alternate;
+        }
+        
+        .close {
+          position: absolute;
+          top: 5px;
+          right: 5px;
+          color: white;
+          font-size: 16px;
+          font-weight: bold;
+          cursor: pointer;
+        }
+        
+        @keyframes changeColor {
+          from { background-color: #f44336; }
+          to { background-color: #4CAF50; }
+        }
+        </style>
+        
+        <div class="popup">
+          <span class="close">&times;</span>
+          <h3 style="font-size: 14px;">PELOTERO, Aqui Busca un Equipo Rival para Jugar</h3>
+          <p style="margin-bottom: 5px;">Haga clic <a href="https://chat.whatsapp.com/LdDy9zdsBYzIKtuUqQsJIq" target="_blank">aquí</a>.</p>
         </div>
-      </a>
+        
+        <script>
+        document.querySelector('.close').addEventListener('click', function() {
+          document.querySelector('.popup').style.display = 'none';
+        });
+        </script>
+        
 
 
              <!-- de aqui pa abajo LA TALBA DE OTROS-->  
