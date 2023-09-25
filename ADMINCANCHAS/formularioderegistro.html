@@ -115,6 +115,7 @@
       <br><br>
 
       <button type="button" onclick="enviarWhatsApp()">Enviar</button>
+      
     </form>
 
     <script>
@@ -151,6 +152,11 @@
 
           // Generar la URL de WhatsApp con el número y el mensaje
           var urlWhatsApp = "https://wa.me/51940643215?text=" + mensaje;
+
+                    // ALERTA AL NOLLENAR TODO FORMULARIO
+          alert("Por favor, llene todos los datos.");
+  } else {
+
 
           // Abrir la URL de WhatsApp en una nueva pestaña
           window.open(urlWhatsApp);
