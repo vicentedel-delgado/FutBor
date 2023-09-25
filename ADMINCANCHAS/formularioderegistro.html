@@ -97,12 +97,12 @@
       <input type="text" id="horario" name="horario" required>
       <br><br>
       
-      <label for="tarifaDiario">Tarifa Diario x Hora:</label>
-      <input type="text" id="tarifaDiario" name="tarifaDiario" required>
+      <label for="tarifaDiario">Tarifa Diario x Hora en S/:</label>
+      <input type="number" id="tarifaDiario" name="tarifaDiario" required>
       <br><br>
       
-      <label for="tarifaNoche">Tarifa Noche x Hora:</label>
-      <input type="text" id="tarifaNoche" name="tarifaNoche" required>
+      <label for="tarifaNoche">Tarifa Noche x Hora en S/:</label>
+      <input type="number" id="tarifaNoche" name="tarifaNoche" required>
       <br><br>
 
       <label for="foto">Foto:</label>
@@ -117,7 +117,6 @@
       <button type="button" onclick="enviarWhatsApp()">Enviar</button>
       
     </form>
-
     <script>
       function enviarWhatsApp() {
         var nombrePropietario = document.getElementById("nombrePropietario").value;
@@ -129,34 +128,51 @@
         var horario = document.getElementById("horario").value;
         var tarifaDiario = document.getElementById("tarifaDiario").value;
         var tarifaNoche = document.getElementById("tarifaNoche").value;
-        var foto = document.getElementById("foto").value;
         var terminosCondiciones = document.getElementById("terminosCondiciones").checked;
-
-        if (nombrePropietario === "" || telefono === "" || correo === "" || nombreCancha === "" || numCanchas === "" || horario === "" || tarifaDiario === "" || tarifaNoche === "" || !terminosCondiciones) {
-          alert("Por favor, complete todos los campos del formulario y acepte los términos y condiciones de FutBor.");
+    
+        // Verificar si algún campo obligatorio está vacío
+        if (
+          nombrePropietario === "" ||
+          telefono === "" ||
+          correo === "" ||
+          nombreCancha === "" ||
+          numCanchas === "" ||
+          direccion === "" ||
+          horario === "" ||
+          tarifaDiario === "" ||
+          tarifaNoche === "" ||
+          !terminosCondiciones
+        ) {
+          // Mostrar mensaje de error
+          alert("Por favor, complete todos los campos del formulario y acepte los terminos y condiciones de Futbor.");
         } else {
           // Construir el mensaje con los datos ingresados
-          var mensaje = "🙋‍♂️¡Hola! deseo registrar mi Cancha en FutBor⚽\n\n";
-          mensaje += "Nombre del Propietario: " + nombrePropietario + "\n";
-          mensaje += "Telf: de WhatsApp: " + telefono + "\n";
-          mensaje += "Correo Gmail: " + correo + "\n";
-          mensaje += "Nombre de Cancha Sintetica: " + nombreCancha + "\n";
-          mensaje += "Numero de Canchas Disponibles: " + numCanchas + "\n";
-          mensaje += "Direccion: " + direccion + "\n";
-          mensaje += "Horario de Atencion: " + horario + "\n";
-          mensaje += "Tarifa Diario x Hora: " + tarifaDiario + "\n";
-          mensaje += "Tarifa Noche x Hora: " + tarifaNoche;
-
+          var mensaje =
+            "🙋‍♂️¡Hola! Deseo registrar mi Cancha en FutBor⚽\n\n" +
+            "Nombre del Propietario: " + nombrePropietario + "\n" +
+            "Telf: de WhatsApp: " + telefono + "\n" +
+            "Correo Gmail: " + correo + "\n" +
+            "Nombre de Cancha Sintetica: " + nombreCancha + "\n" +
+            "Numero de Canchas Disponibles: " + numCanchas + "\n" +
+            "Direccion: " + direccion + "\n" +
+            "Horario de Atencion: " + horario + "\n" +
+            "Tarifa Diario x Hora: " + tarifaDiario + "\n" +
+            "Tarifa Noche x Hora: " + tarifaNoche;
+    
           // Reemplazar los espacios en blanco por %20 para la URL de WhatsApp
           mensaje = encodeURIComponent(mensaje);
-
+    
           // Generar la URL de WhatsApp con el número y el mensaje
           var urlWhatsApp = "https://wa.me/51940643215?text=" + mensaje;
-
+    
           // Abrir la URL de WhatsApp en una nueva pestaña
           window.open(urlWhatsApp);
+    
+          // Mostrar mensaje de éxito
+          alert("Formulario enviado exitosamente. Te contactaremos pronto.");
         }
       }
     </script>
+    
   </body>
 </html>
