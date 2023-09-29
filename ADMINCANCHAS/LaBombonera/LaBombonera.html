@@ -11,7 +11,7 @@
         }
 
         .header {
-            background-color: #007bff;
+            background-color: #c00d0db0;
             color: #fff;
             text-align: center;
             padding: 10px 0;
@@ -68,7 +68,7 @@
         }
 
         button[type="submit"]:hover {
-            background-color: #0056b3;
+            background-color: #7e9cbd;
         }
 
         #fecha-actual {
@@ -112,37 +112,59 @@
 <body>
      <!-- de aqui pa abajo TITULO DE LA CANCHA-->
     <div class="header">
-    <span class="lobostar">CANCHA SINTÉTICA LA BOMBONERA</span>
+    <span class="lobostar">CANCHA SINTÉTICA <br>"LOS MIRLOS"</span>
   </div><br>
 
-       <!-- de aqui pa abajo LA TALBA DE ETARIFIARIO-->  
-      <table>
-        <caption>TARIFARIO</caption>
-        <tr>
-          <th>CANCHA</th>
-          <th>DIA</th>
-          <th>NOCHE</th>
-        </tr>
-        <tr>
-          <td>Cancha N°1 (6 jugadores)</td>
-          <td>S/40</td>
-          <td>S/50</td>
-                  </tr>
-        <tr>
-          <td>Cancha N°2 (6 jugadores)</td>
-          <td>S/40</td>
-          <td>S/50</td>
-        </tr>
-        <tr>
-          <td>Cancha N°3 (9 jugadores)</td>
-          <td>S/80</td>
-          <td>S/100</td>
-        </tr>
-              </table>
-      
+       <!-- de aqui pa abajo BOTON Buscar un rival-->  
+       <style>
+        .popup {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: #df1b0d;
+          color: white;
+          padding: 10px;
+          border-radius: 5px;
+          z-index: 9999;
+          font-size: 12px;
+          text-align: center;
+          animation: changeColor 2s ease-in-out infinite alternate;
+        }
+        
+        .close {
+          position: absolute;
+          top: 5px;
+          right: 5px;
+          color: white;
+          font-size: 16px;
+          font-weight: bold;
+          cursor: pointer;
+        }
+        
+        @keyframes changeColor {
+          from { background-color: #f44336; }
+          to { background-color: #1dad22; }
+        }
+        </style>
+        
+        <div class="popup">
+          <span class="close">&times;</span>
+          <h3 style="font-size: 14px;">PELOTERO, Aqui Busca un Equipo Rival para Jugar</h3>
+          <p style="margin-bottom: 5px;">Haga clic <a href="https://chat.whatsapp.com/LdDy9zdsBYzIKtuUqQsJIq" target="_blank">aquí</a>.</p>
+        </div>
+        
+        <script>
+        document.querySelector('.close').addEventListener('click', function() {
+          document.querySelector('.popup').style.display = 'none';
+        });
+        </script>
+        
+
+
              <!-- de aqui pa abajo LA TALBA DE OTROS-->  
              <table> <br>
-              <caption>OTROS DATOS</caption>
+              <caption>INFORMACION</caption>
                        
              
               <tr>
@@ -152,30 +174,39 @@
               </tr>
               <tr>
                 <td></td>
-                <td>Domingos:  7:00 A.m. a  3:00 P.m.</td>
+                <td>Domingos:  No se trabaja</td>
                 </tr>
 
               <tr>
                 <td>RESERVA ACEPTADA</td>
-                <td>Con 20% o Cancelacion Total</td>
+                <td>Con S/20 o Cancelacion Total</td>
                  </tr>
 
                  <tr>
                   <td>DIRECCION</td>
-                  <td>Av. 1ero. de Mayo 1940</td>
+                  <td>Calle Villa de Jesus  Mz.N Lt.1 - Urb. Villa Jesus</td>
                    </tr>
 
                    
                  <tr>
-                  <td>OFERTAS</td>
+                  <td>
+                    <marquee behavior="alternate" bgcolor="yellow">PROMOCIONES</marquee>
+                  </td>
+                  
                   <td>Muy Pronto</td>
                    </tr>
                     </table> <br>
 
 
-      <!-- de aqui pa abajo CALENDARIO-->
+      <!-- DE AQUI PA ABAJO CALENDARIO-->
+         <!-- Cancha N°1-->
   <div style="display: flex; justify-content: center;">
-    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%230B8043&ctz=America%2FLima&showCalendars=0&showTabs=0&showPrint=0&title=La%20Bombonera%20-%20Cancha%20N%C2%B01%20(6%20Jugadores)&mode=WEEK&src=Mjc1OGUyMzRmNjNlZWRmMGE1NmNlZDEyOGY4MWJhZGVlMGFkMzkyNWNiMmJjNzI0ZmYzYmU4ZmY0MjVjN2I2OEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%230B8043" style="border:solid 1px #777" width="380" height="600" frameborder="0" scrolling="no"></iframe>
+    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%230B8043&ctz=America%2FLima&showCalendars=0&showTabs=0&showPrint=0&mode=WEEK&title=LA%20DELIS%20-%20CANCHA%20N%C2%B01%20(6%20JUGADORES)&src=MTc4NTZiMTRjM2I3MDAyMzQ1MzVlYjA4MjUxODM5MTA0NDg1MzZmN2NkNDIxM2FiYzFhYTg0NTg4ZGI5NjY4M0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%230B8043" style="border:solid 1px #777" width="380" height="600" frameborder="0" scrolling="no"></iframe>
+  </div>
+  <br>
+           <!-- Cancha N°2-->
+  <div style="display: flex; justify-content: center;">
+    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%237CB342&ctz=America%2FLima&showCalendars=0&showTabs=0&showPrint=0&mode=WEEK&title=Cancha%20N%C2%B02%20(6%20Jugadores)Dia%20S%2F40%20-%20Noche%20S%2F50%20-%20La%20Delis&src=Mjc1OGUyMzRmNjNlZWRmMGE1NmNlZDEyOGY4MWJhZGVlMGFkMzkyNWNiMmJjNzI0ZmYzYmU4ZmY0MjVjN2I2OEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%230B8043" style="border:solid 1px #777" width="380" height="600" frameborder="0" scrolling="no"></iframe>
   </div>
   
       <!-- de aqui pa abajo FORMULARIO-->
@@ -284,7 +315,7 @@
     <label for="mensaje">Mensaje:</label> <br>
     <textarea id="mensaje" name="mensaje"></textarea><br>
 
-    <label>ACEPTO: Hacer la reserva con 20%  por YAPE o PLIN al numero 952878491 a nombre de Vicente Delgado y enviar el comprobante por WhatsApp:</label><br>
+    <label>ACEPTO: Hacer la reserva con S/20 o cancelacion total por YAPE o PLIN al numero 952878491 a nombre de Vicente Delgado y enviar el comprobante por WhatsApp:</label><br>
     <input type="checkbox" id="aceptar_reserva" required><br>
 
     <div id="fecha-actual"></div>
@@ -310,4 +341,3 @@
   </script>
 </body>
 </html>
-
