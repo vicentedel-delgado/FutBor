@@ -211,7 +211,7 @@
       <!-- de aqui pa abajo FORMULARIO-->
 
   <h1>LLENA EL FORMULARIO PARA RESERVAR</h1>
-  <form id="formulario" onsubmit="return enviarFormulario()">
+  <form id="formulario" onsubmit="return enviarFormulario()" action="guardar_datos.php" method="post">
         <label for="cancha">Cancha:</label> <br>
     <select id="cancha" name="cancha" required>
         <option value="">Seleccione una opción</option>
@@ -338,5 +338,6 @@
         window.open('https://api.whatsapp.com/send?phone=' + numero + '&text=' + mensaje);
     });
   </script>
+
 </body>
 </html>
