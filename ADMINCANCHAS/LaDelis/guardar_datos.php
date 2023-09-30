@@ -1,4 +1,8 @@
 <?php
+echo "Script ejecutado";
+var_dump($_POST);
+echo "Error: " . $conn->error;
+
 include('conexion.php');
 
 // Obtener los datos del formulario
