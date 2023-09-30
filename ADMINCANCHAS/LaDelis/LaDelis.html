@@ -110,8 +110,6 @@
 
 
 <body>
-       <!-- de aqui pa abajo CONEXION PHP BASE DE DATOS-->
-  <?php include 'conexion.php'; ?>
      <!-- de aqui pa abajo TITULO DE LA CANCHA-->
     <div class="header">
     <span class="lobostar">CANCHA SINTÉTICA <br>"LA DELIS"</span>
@@ -214,8 +212,7 @@
 
   <h1>LLENA EL FORMULARIO PARA RESERVAR</h1>
   <form id="formulario" onsubmit="return enviarFormulario()">
-    action="http://tu_servidor_virtual/guardar.php">
-    <label for="cancha">Cancha:</label> <br>
+        <label for="cancha">Cancha:</label> <br>
     <select id="cancha" name="cancha" required>
         <option value="">Seleccione una opción</option>
         <option value="Cancha N° 1 (6 Jugadores)">Cancha N° 1 (6 Jugadores)</option>
