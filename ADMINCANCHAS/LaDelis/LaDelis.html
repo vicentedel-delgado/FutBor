@@ -337,8 +337,11 @@
             'NOMBRE: ' + document.getElementById('nombre').value + '%0A' +
             'MENSAJE: ' + document.getElementById('mensaje').value;
 
-        window.open('https://api.whatsapp.com/send?phone=' + numero1 + '&text=' + mensaje);
-        window.open('https://api.whatsapp.com/send?phone=' + numero2 + '&text=' + mensaje);
+        var enlace = 'https://api.whatsapp.com/send?phone=' + numero1 + '&text=' + encodeURIComponent(mensaje) +
+                     '%0A%0A' +
+                     'O puedes contactar al segundo número: ' + 'https://api.whatsapp.com/send?phone=' + numero2 + '&text=' + encodeURIComponent(mensaje);
+
+        window.open(enlace);
     });
 </script>
 
