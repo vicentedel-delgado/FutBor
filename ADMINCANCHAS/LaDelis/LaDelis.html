@@ -322,28 +322,24 @@
     <button type="submit">Reservar</button>
   </form>
 
-  <script>
-    document.getElementById('formulario').addEventListener('submit', function(e) {
-        e.preventDefault(); // Previene el envío por defecto del formulario
-
-        var numero1 = '51940643215';
-        var numero2 = '51948494984';
-        
-        var mensaje = '⚽¡HOLA, Estoy Reservando La Cancha como indica abajo,  también le hago el adelanto del 20% o cancelacion total por YAPE/PLIN al N° 952878491 a Nombre de Vicente Delgado, para asegurar la cancha y le envió el comprobante de pago.   !%0A%0A' +
-            'CANCHA RESERVADA: ' + document.getElementById('cancha').value + '%0A' +
-            'FECHA: ' + document.getElementById('fecha').value + '%0A' +
-            'HORA DE INICIO: ' + document.getElementById('hora_inicio').value + '%0A' +
-            'HORA DE FIN: ' + document.getElementById('hora_fin').value + '%0A' +
-            'NOMBRE: ' + document.getElementById('nombre').value + '%0A' +
-            'MENSAJE: ' + document.getElementById('mensaje').value;
-
-        var enlace = 'https://api.whatsapp.com/send?phone=' + numero1 + '&text=' + encodeURIComponent(mensaje) +
-                     '%0A%0A' +
-                     'O puedes contactar al segundo número: ' + 'https://api.whatsapp.com/send?phone=' + numero2 + '&text=' + encodeURIComponent(mensaje);
-
-        window.open(enlace);
-    });
-</script>
+  <?php
+  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+      $numeros = array('51940643215', '51948494984');
+      $mensaje = '⚽¡HOLA! Estoy haciendo una reserva. Detalles:%0A%0A';
+      $mensaje .= 'CANCHA RESERVADA: ' . $_POST['cancha'] . '%0A';
+      $mensaje .= 'FECHA: ' . $_POST['fecha'] . '%0A';
+      $mensaje .= 'HORA DE INICIO: ' . $_POST['hora_inicio'] . '%0A';
+      $mensaje .= 'HORA DE FIN: ' . $_POST['hora_fin'] . '%0A';
+      $mensaje .= 'NOMBRE: ' . $_POST['nombre'];
+  
+      foreach ($numeros as $numero) {
+          $url = 'https://api.whatsapp.com/send?phone=' . $numero . '&text=' . urlencode($mensaje);
+          header('Location: ' . $url);
+          exit();
+      }
+  }
+  ?>
+  
 
 </body>
 </html>
