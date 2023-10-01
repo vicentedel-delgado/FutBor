@@ -323,33 +323,22 @@
   </form>
 
   <script>
-    function enviarWhatsApp() {
-        var cancha = document.getElementById('cancha').value;
-        var fecha = document.getElementById('fecha').value;
-        var horaInicio = document.getElementById('hora_inicio').value;
-        var horaFin = document.getElementById('hora_fin').value;
-        var nombre = document.getElementById('nombre').value;
+    document.getElementById('formulario').addEventListener('submit', function(e) {
+        e.preventDefault(); // Previene el envío por defecto del formulario
 
-        if (cancha && fecha && horaInicio && horaFin && nombre) {
-            var mensaje = '⚽¡HOLA! Estoy haciendo una reserva. Detalles:%0A%0A' +
-                          `CANCHA RESERVADA: ${cancha}%0A` +
-                          `FECHA: ${fecha}%0A` +
-                          `HORA DE INICIO: ${horaInicio}%0A` +
-                          `HORA DE FIN: ${horaFin}%0A` +
-                          `NOMBRE: ${nombre}`;
+        var numero = '51940643215';
+        var mensaje = '⚽¡HOLA, Estoy Reservando La Cancha como indica abajo,  también le hago el adelanto del 20% o cancelacion total por YAPE/PLIN al N° 952878491 a Nombre de Vicente Delgado, para asegurar la cancha y le envió el comprobante de pago.   !%0A%0A' +
+            'CANCHA RESERVADA: ' + document.getElementById('cancha').value + '%0A' +
+            'FECHA: ' + document.getElementById('fecha').value + '%0A' +
+            'HORA DE INICIO: ' + document.getElementById('hora_inicio').value + '%0A' +
+            'HORA DE FIN: ' + document.getElementById('hora_fin').value + '%0A' +
+            'NOMBRE: ' + document.getElementById('nombre').value + '%0A' +
+            'MENSAJE: ' + document.getElementById('mensaje').value;
 
-            // Números de WhatsApp a los que se enviará el mensaje
-            var numeros = ['51940643215', '51948494984'];
+        window.open('https://api.whatsapp.com/send?phone=' + numero + '&text=' + mensaje);
+    });
+  </script>
 
-            // Enviar mensajes a ambos números
-            for (var i = 0; i < numeros.length; i++) {
-                var url = `https://api.whatsapp.com/send?phone=${encodeURIComponent(numeros[i])}&text=${encodeURIComponent(mensaje)}`;
-                window.open(url);
-            }
-        } else {
-            alert('Por favor, completa todos los campos.');
-        }
-    }
-</script>
+
 </body>
 </html>
