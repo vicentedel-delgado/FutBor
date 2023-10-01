@@ -326,8 +326,7 @@
     document.getElementById('formulario').addEventListener('submit', function(e) {
         e.preventDefault(); // Previene el envío por defecto del formulario
 
-        var numero 1 = '51940643215';
-        var numero 2 = '51940643215';
+        var numero = '51940643215';
         var mensaje = '⚽¡HOLA, Estoy Reservando La Cancha como indica abajo,  también le hago el adelanto del 20% o cancelacion total por YAPE/PLIN al N° 952878491 a Nombre de Vicente Delgado, para asegurar la cancha y le envió el comprobante de pago.   !%0A%0A' +
             'CANCHA RESERVADA: ' + document.getElementById('cancha').value + '%0A' +
             'FECHA: ' + document.getElementById('fecha').value + '%0A' +
@@ -336,11 +335,9 @@
             'NOMBRE: ' + document.getElementById('nombre').value + '%0A' +
             'MENSAJE: ' + document.getElementById('mensaje').value;
 
-        window.open('https://api.whatsapp.com/send?phone=' + numero 1 + '&text=' + mensaje);
-        window.open('https://api.whatsapp.com/send?phone=' + numero 2 + '&text=' + mensaje);
+        window.open('https://api.whatsapp.com/send?phone=' + numero + '&text=' + mensaje);
     });
   </script>
-
-
+  
 </body>
 </html>
