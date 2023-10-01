@@ -324,20 +324,32 @@
 
   <script>
     function enviarWhatsApp() {
-        var numeros = ['51940643215', '51948494984'];
-        var mensaje = '⚽¡HOLA! Estoy haciendo una reserva. Detalles:%0A%0A';
-        mensaje += 'CANCHA RESERVADA: ' + encodeURIComponent(document.getElementById('cancha').value) + '%0A';
-        mensaje += 'FECHA: ' + encodeURIComponent(document.getElementById('fecha').value) + '%0A';
-        mensaje += 'HORA DE INICIO: ' + encodeURIComponent(document.getElementById('hora_inicio').value) + '%0A';
-        mensaje += 'HORA DE FIN: ' + encodeURIComponent(document.getElementById('hora_fin').value) + '%0A';
-        mensaje += 'NOMBRE: ' + encodeURIComponent(document.getElementById('nombre').value);
+        var cancha = document.getElementById('cancha').value;
+        var fecha = document.getElementById('fecha').value;
+        var horaInicio = document.getElementById('hora_inicio').value;
+        var horaFin = document.getElementById('hora_fin').value;
+        var nombre = document.getElementById('nombre').value;
 
-        for (var i = 0; i < numeros.length; i++) {
-            var url = 'whatsapp://send?phone=' + numeros[i] + '&text=' + mensaje;
-            window.open(url);
+        if (cancha && fecha && horaInicio && horaFin && nombre) {
+            var mensaje = '⚽¡HOLA! Estoy haciendo una reserva. Detalles:%0A%0A' +
+                          `CANCHA RESERVADA: ${cancha}%0A` +
+                          `FECHA: ${fecha}%0A` +
+                          `HORA DE INICIO: ${horaInicio}%0A` +
+                          `HORA DE FIN: ${horaFin}%0A` +
+                          `NOMBRE: ${nombre}`;
+
+            // Números de WhatsApp a los que se enviará el mensaje
+            var numeros = ['51940643215', '51948494984'];
+
+            // Enviar mensajes a ambos números
+            for (var i = 0; i < numeros.length; i++) {
+                var url = `https://api.whatsapp.com/send?phone=${encodeURIComponent(numeros[i])}&text=${encodeURIComponent(mensaje)}`;
+                window.open(url);
+            }
+        } else {
+            alert('Por favor, completa todos los campos.');
         }
     }
 </script>
-
 </body>
 </html>
