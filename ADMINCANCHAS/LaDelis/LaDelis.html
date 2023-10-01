@@ -322,24 +322,22 @@
     <button type="submit">Reservar</button>
   </form>
 
-  <?php
-  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-      $numeros = array('51940643215', '51948494984');
-      $mensaje = '⚽¡HOLA! Estoy haciendo una reserva. Detalles:%0A%0A';
-      $mensaje .= 'CANCHA RESERVADA: ' . $_POST['cancha'] . '%0A';
-      $mensaje .= 'FECHA: ' . $_POST['fecha'] . '%0A';
-      $mensaje .= 'HORA DE INICIO: ' . $_POST['hora_inicio'] . '%0A';
-      $mensaje .= 'HORA DE FIN: ' . $_POST['hora_fin'] . '%0A';
-      $mensaje .= 'NOMBRE: ' . $_POST['nombre'];
-  
-      foreach ($numeros as $numero) {
-          $url = 'https://api.whatsapp.com/send?phone=' . $numero . '&text=' . urlencode($mensaje);
-          header('Location: ' . $url);
-          exit();
-      }
-  }
-  ?>
-  
+  <script>
+    function enviarWhatsApp() {
+        var numeros = ['51940643215', '51948494984'];
+        var mensaje = '⚽¡HOLA! Estoy haciendo una reserva. Detalles:%0A%0A';
+        mensaje += 'CANCHA RESERVADA: ' + encodeURIComponent(document.getElementById('cancha').value) + '%0A';
+        mensaje += 'FECHA: ' + encodeURIComponent(document.getElementById('fecha').value) + '%0A';
+        mensaje += 'HORA DE INICIO: ' + encodeURIComponent(document.getElementById('hora_inicio').value) + '%0A';
+        mensaje += 'HORA DE FIN: ' + encodeURIComponent(document.getElementById('hora_fin').value) + '%0A';
+        mensaje += 'NOMBRE: ' + encodeURIComponent(document.getElementById('nombre').value);
+
+        for (var i = 0; i < numeros.length; i++) {
+            var url = 'whatsapp://send?phone=' + numeros[i] + '&text=' + mensaje;
+            window.open(url);
+        }
+    }
+</script>
 
 </body>
 </html>
