@@ -10,21 +10,6 @@
         width: 100%;
       }
     </style>
-
-    <!-- Google analitic (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-6X6VPDJW87"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-6X6VPDJW87");
-    </script>
   </head>
 
   <body>
@@ -42,11 +27,6 @@
 
 // ... DE AQUI PA ABAJO CANCHAS SINTETICA
                 const markers = [
-          {
-            position: { lat: -12.198866, lng: 76.966733, },
-            title: "Cancha1",
-            url: "https://www.tiendasel.com/zapatos",
-          },
           {
             position: { lat: -12.070785, lng: -77.049512 },
             title: "Cancha4",
@@ -80,7 +60,6 @@
 
         // aqui pa otros marcadores 
         ];
-
         const ballIcon = {
           url: "https://i.ibb.co/z7zBm4C/4-removebg-preview.png",
           scaledSize: new google.maps.Size(40, 40),
