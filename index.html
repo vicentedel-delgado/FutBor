@@ -107,9 +107,10 @@
       }
       window.onload = initMap;
     </script>
+<br>
 
+// DE AQUI PA ABAJO, AVISO ACTIVE SU ubicacion
 
-      // aqui pa otros marcadores 
 <button onclick="pedirUbicacion()">Activar Ubicación</button>
 
 <script>
@@ -124,8 +125,12 @@ function pedirUbicacion() {
 function mostrarPosicion(posicion) {
   var latitud = posicion.coords.latitude;
   var longitud = posicion.coords.longitude;
-  alert("Tu ubicación actual es: Latitud " + latitud + " y Longitud " + longitud);
-  // Aquí puedes realizar otras acciones con la ubicación obtenida
+
+  // Crea un pop-up con la ubicación obtenida
+  var ubicacion = "Tu ubicación actual es: Latitud " + latitud + " y Longitud " + longitud;
+  var popUp = window.open("", "Ubicación", "width=400,height=200");
+  popUp.document.write("<p>" + ubicacion + "</p>");
+
 }
 </script>
 
