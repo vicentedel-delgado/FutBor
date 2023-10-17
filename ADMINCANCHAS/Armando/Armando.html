@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Reserva de Canchas Sinteticas en Segundos</title>
+    <title>Formulario de Reserva</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -115,7 +115,7 @@
     <span class="lobostar">CANCHA SINTÉTICA <br>"ARMANDO"</span>
   </div><br>
 
-       <!-- de aqui pa abajo BOTON  Buscar un rival-->  
+       <!-- de aqui pa abajo BOTON Buscar un rival-->  
        <style>
         .popup {
           position: fixed;
@@ -174,17 +174,17 @@
               </tr>
               <tr>
                 <td></td>
-                <td>Lunes:  No se trabaja</td>
+                <td>Lunes:  7:00 A.m. a  3:00 P.m.</td>
                 </tr>
 
               <tr>
                 <td>RESERVA ACEPTADA</td>
-                <td>Con S/20 o cancelacion total por anticipado</td>
+                <td>Con S/20 o cancelacion total por adelantada</td>
                  </tr>
 
                  <tr>
                   <td>DIRECCION</td>
-                  <td>Calle Villa de Jesus  Mz.N Lt.1 - Urb. Villa Jesus</td>
+                  <td>Calle los Sauces</td>
                    </tr>
 
                    
@@ -196,18 +196,147 @@
                   <td>Muy Pronto</td>
                    </tr>
                     </table> <br>
+
+
       <!-- DE AQUI PA ABAJO CALENDARIO-->
          <!-- Cancha N°1-->
   <div style="display: flex; justify-content: center;">
-    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%237CB342&ctz=America%2FLima&showCalendars=0&showTabs=0&showPrint=0&mode=WEEK&title=Cancha%20N%C2%B01%20(6%20Jugadores)Dia%20S%2F50%20-%20Noche%20%20S%2F70%20-%20Los%20MIrlos&src=Mjc1OGUyMzRmNjNlZWRmMGE1NmNlZDEyOGY4MWJhZGVlMGFkMzkyNWNiMmJjNzI0ZmYzYmU4ZmY0MjVjN2I2OEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%230B8043" style="border:solid 1px #777" width="380" height="600" frameborder="0" scrolling="no"></iframe>  
-  </div>
+
+    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%237CB342&ctz=America%2FLima&showCalendars=0&showTabs=0&showPrint=0&mode=WEEK&title=Cancha%20N%C2%B01%20(6%20Jugadores)Dia%20S%2F40%20-%20Noche%20S%2F60%20-%20La%20Delis&src=MTc4NTZiMTRjM2I3MDAyMzQ1MzVlYjA4MjUxODM5MTA0NDg1MzZmN2NkNDIxM2FiYzFhYTg0NTg4ZGI5NjY4M0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%2333B679" style="border:solid 1px #777" width="380" height="600" frameborder="0" scrolling="no"></iframe>  </div>
   <br>
            <!-- Cancha N°2-->
   <div style="display: flex; justify-content: center;">
-    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%237CB342&ctz=America%2FLima&showCalendars=0&showTabs=0&showPrint=0&mode=WEEK&showNav=1&title=Cancha%20N%C2%B02%20(6%20Jugadores)Dia%20S%2F50%20-%20Noche%20S%2F70%20-%20Los%20Mirlos&src=NGZiMjVkNzE4Zjg4YjFjNTJmMjQ0MWNmNzFjMDI1ZjA2MDU3NDZlNjc3NzFjNWFjOGMwYzJhMjE4MmY3YTJkZUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%2333B679" style="border:solid 1px #777" width="380" height="600" frameborder="0" scrolling="no"></iframe>
-  </div>
-     <!-- de aqui pa abajo formulario ChatWith-->
-  <script defer data-widget-type="group" data-person="5209c517-4ed3-4c15-9e38-ba4afc6d2bf3" src="https://widget.tochat.be/bundle.js?key=7959c6c9-1211-452e-a9f3-1b861ef7b4b8"></script><div id="whatapp-people-widget"></div>
 
+    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%237CB342&ctz=America%2FLima&showCalendars=0&showTabs=0&showPrint=0&mode=WEEK&title=Cancha%20N%C2%B02%20(6%20Jugadores)Dia%20S%2F40%20-%20Noche%20S%2F60%20-%20La%20Delis&src=OWY1ZTE0N2UxZTE3YTIxYWFkYmRiODU3NzgyNGJmMzEyNWJjZWU2NGI0ODkzOWNhMmRlMzZjNTM3ZWFlMTgwZEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%2333B679" style="border:solid 1px #777" width="380" height="600" frameborder="0" scrolling="no"></iframe>  </div>
+    
+    <!-- de aqui pa abajo FORMULARIO-->
+  <h1>LLENA EL FORMULARIO PARA RESERVAR</h1>
+  <form id="formulario" onsubmit="return enviarFormulario()" id="formulario">
+        <label for="cancha">Cancha:</label> <br>
+    <select id="cancha" name="cancha" required>
+        <option value="">Seleccione una opción</option>
+        <option value="Cancha N° 1 (6 Jugadores)">Cancha N° 1 (6 Jugadores)</option>
+        <option value="Cancha N° 2 (6 Jugadores)">Cancha N° 2 (6 Jugadores)</option>
+        <option value="Cancha N° 3 (9 jugadores)">Cancha N° 3 (9 Jugadores) </option>
+        <!-- Agregar más opciones de cancha aquí -->
+    </select><br>
+
+    <label for="fecha">Fecha:</label> <br>
+    <input type="date" id="fecha" name="fecha" required><br>
+
+    <label for="hora_inicio">Hora de Inicio:</label> <br>
+    <select id="hora_inicio" name="hora_inicio" required>
+        <option value="">Seleccione una opción</option>
+        <option value="06:00 a.m.">06:00 a.m. </option>
+        <option value="06:30 a.m.">06:30 a.m.</option>
+        <option value="07:00 a.m. ">07:00 a.m.</option>
+        <option value="07:00 a.m. ">07:00 a.m.</option>
+        <option value="07:30 a.m. ">07:30 a.m.</option>
+        <option value="08:00 a.m. ">08:00 a.m.</option>
+        <option value="08:30 a.m. ">08:30 a.m.</option>
+        <option value="09:00 a.m. ">09:00 a.m.</option>
+        <option value="09:30 a.m. ">09:30 a.m.</option>
+        <option value="10:00 a.m. ">10:00 a.m.</option>
+        <option value="10:30 a.m. ">10:30 a.m.</option>
+        <option value="11:00 a.m. ">11:00 a.m.</option>
+        <option value="11:30 a.m. ">11:30 a.m.</option>
+        <option value="12:00 p.m.. ">12:00 p.m.</option>
+        <option value="12:30 p.m.. ">12:30 p.m.</option>
+        <option value="01:00 p.m.. ">01:00 p.m.</option>
+        <option value="01:30 p.m.. ">01:30 p.m.</option>
+        <option value="02:00 p.m.. ">02:00 p.m.</option>
+        <option value="02:30 p.m.. ">02:30 p.m.</option>
+        <option value="03:00 p.m.. ">03:00 p.m.</option>
+        <option value="03:30 p.m.. ">03:30 p.m.</option>
+        <option value="04:00 p.m.. ">04:00 p.m.</option>
+        <option value="04:30 p.m.. ">04:30 p.m.</option>
+        <option value="05:00 p.m.. ">05:00 p.m.</option>
+        <option value="05:30 p.m.. ">05:30 p.m.</option>
+        <option value="06:00 p.m.. ">06:00 p.m.</option>
+        <option value="06:30 p.m.. ">06:30 p.m.</option>
+        <option value="07:00 p.m.. ">07:00 p.m.</option>
+        <option value="07:30 p.m.. ">07:30 p.m.</option>
+        <option value="08:00 p.m.. ">08:00 p.m.</option>
+        <option value="08:30 p.m.. ">08:30 p.m.</option>
+        <option value="09:00 p.m.. ">09:00 p.m.</option>
+        <option value="09:30 p.m.. ">09:30 p.m.</option>
+        <option value="10:00 p.m.. ">10:00 p.m.</option>
+        <option value="10:30 p.m.. ">10:30 p.m.</option>
+        <option value="11:00 p.m.. ">11:00 p.m.</option>
+
+        <!-- Agregar más opciones de hora de inicio aquí -->
+    </select><br>
+
+    <label for="hora_fin">Hora de Fin:</label> <br>
+    <select id="hora_fin" name="hora_fin" required>
+        <option value="">Seleccione una opción</option>
+        <option value="07:00 a.m. ">07:00 a.m.</option>
+        <option value="07:30 a.m. ">07:30 a.m.</option>
+        <option value="08:00 a.m. ">08:00 a.m.</option>
+        <option value="08:30 a.m. ">08:30 a.m.</option>
+        <option value="09:00 a.m. ">09:00 a.m.</option>
+        <option value="09:30 a.m. ">09:30 a.m.</option>
+        <option value="10:00 a.m. ">10:00 a.m.</option>
+        <option value="10:30 a.m. ">10:30 a.m.</option>
+        <option value="11:00 a.m. ">11:00 a.m.</option>
+        <option value="11:30 a.m. ">11:30 a.m.</option>
+        <option value="12:00 p.m.. ">12:00 p.m.</option>
+        <option value="12:30 p.m.. ">12:30 p.m.</option>
+        <option value="01:00 p.m.. ">01:00 p.m.</option>
+        <option value="01:30 p.m.. ">01:30 p.m.</option>
+        <option value="02:00 p.m.. ">02:00 p.m.</option>
+        <option value="02:30 p.m.. ">02:30 p.m.</option>
+        <option value="03:00 p.m.. ">03:00 p.m.</option>
+        <option value="03:30 p.m.. ">03:30 p.m.</option>
+        <option value="04:00 p.m.. ">04:00 p.m.</option>
+        <option value="04:30 p.m.. ">04:30 p.m.</option>
+        <option value="05:00 p.m.. ">05:00 p.m.</option>
+        <option value="05:30 p.m.. ">05:30 p.m.</option>
+        <option value="06:00 p.m.. ">06:00 p.m.</option>
+        <option value="06:30 p.m.. ">06:30 p.m.</option>
+        <option value="07:00 p.m.. ">07:00 p.m.</option>
+        <option value="07:30 p.m.. ">07:30 p.m.</option>
+        <option value="08:00 p.m.. ">08:00 p.m.</option>
+        <option value="08:30 p.m.. ">08:30 p.m.</option>
+        <option value="09:00 p.m.. ">09:00 p.m.</option>
+        <option value="09:30 p.m.. ">09:30 p.m.</option>
+        <option value="10:00 p.m.. ">10:00 p.m.</option>
+        <option value="10:30 p.m.. ">10:30 p.m.</option>
+        <option value="11:00 p.m.. ">11:00 p.m.</option>
+        <option value="11:30 p.m.. ">11:30 p.m.</option>
+        <option value="12:00 a.m. ">12:00 a.m.</option>
+        <!-- Agregar más opciones de hora de fin aquí -->
+    </select><br>
+
+    <label for="nombre">Nombre completo:</label> <br>
+    <input type="text" id="nombre" name="nombre" required><br>
+
+    <label for="mensaje">Mensaje:</label> <br>
+    <textarea id="mensaje" name="mensaje"></textarea><br>
+
+    <label>ACEPTO: Hacer la reserva con S/20 para asegurar la cancha por YAPE o PLIN al numero 95878952 a nombre de Armando Pinares y enviar el comprobante por WhatsApp:</label><br>
+    <input type="checkbox" id="aceptar_reserva" required><br>
+
+    <div id="fecha-actual"></div>
+
+    <button type="submit">Reservar</button>
+  </form>
+
+  <script>
+    document.getElementById('formulario').addEventListener('submit', function(e) {
+        e.preventDefault(); // Previene el envío por defecto del formulario
+
+        var numero = '51940643215';
+        var mensaje = '⚽¡HOLA, Estoy Reservando La Cancha como indica abajo,  también le hago el adelanto del 20% o cancelacion total por YAPE/PLIN al N° 952878491 a Nombre de Vicente Delgado, para asegurar la cancha y le envió el comprobante de pago.   !%0A%0A' +
+            'CANCHA RESERVADA: ' + document.getElementById('cancha').value + '%0A' +
+            'FECHA: ' + document.getElementById('fecha').value + '%0A' +
+            'HORA DE INICIO: ' + document.getElementById('hora_inicio').value + '%0A' +
+            'HORA DE FIN: ' + document.getElementById('hora_fin').value + '%0A' +
+            'NOMBRE: ' + document.getElementById('nombre').value + '%0A' +
+            'MENSAJE: ' + document.getElementById('mensaje').value;
+
+        window.open('https://api.whatsapp.com/send?phone=' + numero + '&text=' + mensaje);
+    });
+  </script>
 </body>
 </html>
