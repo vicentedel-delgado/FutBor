@@ -109,31 +109,49 @@
     </script>
 <br>
 
-// DE AQUI PA ABAJO, AVISO ACTIVE SU ubicacion
-
-<button onclick="pedirUbicacion()">Activar Ubicación</button>
-
-<script>
-function pedirUbicacion() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(mostrarPosicion);
-  } else {
-    alert("La geolocalización no es compatible con este navegador.");
+ <!-- de aqui pa abajo BOTON  Mensaje Active su Ubicacion-->  
+ <style>
+  .popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #df1b0d;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 9999;
+    font-size: 12px;
+    text-align: center;
+    animation: changeColor 2s ease-in-out infinite alternate;
   }
-}
-
-function mostrarPosicion(posicion) {
-  var latitud = posicion.coords.latitude;
-  var longitud = posicion.coords.longitude;
-
-  // Crea un pop-up con la ubicación obtenida
-  var ubicacion = "Tu ubicación actual es: Latitud " + latitud + " y Longitud " + longitud;
-  var popUp = window.open("", "Ubicación", "width=400,height=200");
-  popUp.document.write("<p>" + ubicacion + "</p>");
-
-}
-</script>
-
+  
+  .close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  @keyframes changeColor {
+    from { background-color: #f44336; }
+    to { background-color: #1dad22; }
+  }
+  </style>
+  
+  <div class="popup">
+    <span class="close">&times;</span>
+    <h3 style="font-size: 14px;">PELOTERO, Para encontrar Canchas Sinteticas Certa a ti, Active su Ubicacion en Configuraciones</h3>
+  </div>
+  
+  <script>
+  document.querySelector('.close').addEventListener('click', function() {
+    document.querySelector('.popup').style.display = 'none';
+  });
+  </script>
 
 
   </body>
